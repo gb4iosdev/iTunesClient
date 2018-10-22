@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         let _ = Itunes.search(term: "taylor swift", media: .music(entity: .musicArtist, attribute: .artistTerm))
         //print(searchEndpoint.request)
         
-        //print("********")
+        //print("***********")
         
         let _ = Itunes.lookup(id: 159260351, entity: MusicEntity.album)
         //print(lookupEndpoint.request)
