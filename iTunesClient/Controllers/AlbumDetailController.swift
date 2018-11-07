@@ -41,7 +41,7 @@ class AlbumDetailController: UITableViewController {
         
         let viewModel = AlbumDetailViewModel.init(album: album)
         
-        // <Add implementation for arwork imageView>
+        artWorkImageView.image = viewModel.artwork
         
         self.albumTitleLabel.text = viewModel.title
         self.albumGenreLabel.text = viewModel.genre
