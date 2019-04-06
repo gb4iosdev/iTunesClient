@@ -20,6 +20,8 @@ class AlbumDetailController: UITableViewController {
         }
     }
     
+    var artWorkImage: UIImage?
+    
     var dataSource: AlbumDetailDataSource = AlbumDetailDataSource(songs: [])
     
     @IBOutlet weak var artWorkImageView: UIImageView!
@@ -41,11 +43,11 @@ class AlbumDetailController: UITableViewController {
         
         let viewModel = AlbumDetailViewModel.init(album: album)
         
-        artWorkImageView.image = viewModel.artwork
+        artWorkImageView.image = artWorkImage!
         
         self.albumTitleLabel.text = viewModel.title
         self.albumGenreLabel.text = viewModel.genre
         self.albumReleaseDateLabel.text = viewModel.releaseDate
+        
     }
-
 }

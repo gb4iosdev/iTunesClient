@@ -49,11 +49,19 @@ class AlbumListController: UITableViewController {
         
         if let selectedIndexPath = tableView.indexPathForSelectedRow {
             let selectedAlbum = dataSource.album(at: selectedIndexPath)
+            
             let albumDetailController = segue.destination as! AlbumDetailController
+            
+            if selectedAlbum.artworkState == .downloaded {
+                albumDetailController.artWorkImage = selectedAlbum.artwork!
+            } else {
+                albumDetailController.artWorkImage = UIImage(named: "AlbumPlaceholder")
+            }
             
             client.lookupAlbum(withId: selectedAlbum.id) { album, error in
                 albumDetailController.album = album
             }
+            //print(selectedAlbum.artwork)
         }
     }
     

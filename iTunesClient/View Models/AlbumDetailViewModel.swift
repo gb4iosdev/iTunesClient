@@ -19,7 +19,9 @@ struct AlbumDetailViewModel {
 extension AlbumDetailViewModel {
     
     init(album: Album) {
+        print("album.artworkState for album title: \(album.name) is: \(album.artworkState)")
         self.artwork = album.artworkState == .downloaded ? album.artwork! : UIImage(named: "AlbumPlaceholder")!
+        //self.artwork = album.artwork!
         self.title = album.censoredName
         self.genre = album.primaryGenre.name
         

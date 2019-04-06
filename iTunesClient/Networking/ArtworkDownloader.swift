@@ -30,6 +30,12 @@ class ArtworkDownloader: Operation {
             return
         }
         
+        // Download image
+        // save to cache with key url
+        // display image SDWEbImage
+        
+        
+        
         guard let imageData = try? Data(contentsOf: url) else { return }
         
         if self.isCancelled {
@@ -39,6 +45,7 @@ class ArtworkDownloader: Operation {
         if imageData.count > 0 {    ///Assume data is valid
             album.artwork = UIImage(data: imageData)
             album.artworkState = .downloaded
+            print("album.artworkState for album title: \(album.name) is: \(album.artworkState)")
         } else {
             album.artworkState = .failed
         }
